@@ -1,0 +1,19 @@
+[package]
+name = "librespot-player"
+version = "0.1.0"
+authors = ["johannesd3 <johannesd@outlook.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.33"
+futures = "0.3"
+env_logger= "0.8"
+tokio = { version = "1.0", features = ["full"] }
+rpassword = "5"
+
+[dependencies.librespot]
+git = "https://github.com/Johannesd3/librespot.git"
+branch = "futures_migration"
+# path = "../librespot"
+default-features = false
+features = ["pulseaudio-backend"]
