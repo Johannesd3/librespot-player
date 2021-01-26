@@ -5,15 +5,22 @@ authors = ["johannesd3 <johannesd@outlook.com>"]
 edition = "2018"
 
 [dependencies]
-clap = "2.33"
+anyhow = "1"
+clap = "3.0.0-beta.2"
 futures = "0.3"
 env_logger= "0.8"
-tokio = { version = "1.0", features = ["full"] }
+tokio = { version = "1", features = ["rt", "macros"] }
 rpassword = "5"
+rodio = "0.13"
 
-[dependencies.librespot]
-git = "https://github.com/Johannesd3/librespot.git"
-branch = "futures_migration"
-# path = "../librespot"
-default-features = false
-features = ["pulseaudio-backend"]
+[dependencies.librespot-core]
+git = "https://github.com/librespot-org/librespot.git"
+branch = "tokio_migration"
+
+[dependencies.librespot-audio]
+git = "https://github.com/librespot-org/librespot.git"
+branch = "tokio_migration"
+
+[dependencies.librespot-metadata]
+git = "https://github.com/librespot-org/librespot.git"
+branch = "tokio_migration"
