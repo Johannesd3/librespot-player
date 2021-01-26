@@ -64,6 +64,10 @@ async fn run() -> Result<()> {
         .await
         .map_err(|_| Error::msg("Cannot open audio file"))?;
 
+    encrypted_file
+        .get_stream_loader_controller()
+        .set_stream_mode();
+
     let audio_key = session
         .audio_key()
         .request(track_id, file_id)
